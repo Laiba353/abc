@@ -26,4 +26,16 @@
     <string name="password1">اپنا پاس ورڈ درج کریں</string>
     <string name="number">اپنا رابطہ نمبر درج کریں</string>
     <string name="savedetails"> تفصیلات محفوظ کریں</string>
+
+    <string name="heading1"> دودھ کی تفصیلات</string>
+
+
+    <string name="quantity"> دودھ کی مقدار درج کریں</string>
+    <string name="price"> دودھ کی قیمت درج کریں</string>
+
+    <string name="cat"> دودھ کی قسم</string>
+
+    <string name="cowmilk">گائے کا دودھ</string>
+    <string name="goatmilk"> بکری کا دودھ</string>
+    <string name="baffalomillk"> بھینس کا دودھ</string>
 </resources>

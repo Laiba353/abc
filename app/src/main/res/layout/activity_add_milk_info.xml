@@ -17,6 +17,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
+        android:id="@+id/heading"
         />
     <EditText
         android:layout_width="160dp"
@@ -53,12 +54,14 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:id="@+id/cat"
         />
     <RadioGroup
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/radiogroup"
     android:orientation="vertical"
+
 
     >
     <RadioButton
@@ -70,6 +73,7 @@
         android:layout_marginLeft="220dp"
         android:buttonTint="@color/white"
         android:id="@+id/goatmilk"
+
 
 
         />
@@ -122,6 +126,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/shape1"
         android:onClick="PostDetails"
+        android:id="@+id/savedetails"
 
         />
 
