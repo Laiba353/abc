@@ -28,8 +28,6 @@ public class AddMilkInfo extends AppCompatActivity {
     Resources resources;
     RadioButton goatmilk, cowmilk, baffalomilk;
     Button savedetails;
-
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
