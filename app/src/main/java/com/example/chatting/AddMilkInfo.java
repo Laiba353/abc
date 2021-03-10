@@ -1,13 +1,17 @@
 package com.example.chatting;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -16,10 +20,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddMilkInfo extends AppCompatActivity {
     android.widget.RadioGroup RadioGroup;
-    EditText Milkquantity, Milkprice;
-    String str,vall;
+    EditText Milkquantity, Milkprice,heading,cat;
+    String str,vall,str1;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+    Context context;
+    Resources resources;
+    RadioButton goatmilk, cowmilk, baffalomilk;
+    Button savedetails;
+
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +38,15 @@ public class AddMilkInfo extends AppCompatActivity {
         Intent inten=getIntent();
        str= inten.getStringExtra("val1");
        dbHelper=new DatabaseHelper(this);
+       heading=findViewById(R.id.heading);
+       savedetails=findViewById(R.id.savedetails);
+       cat=findViewById(R.id.cat);
         RadioGroup=findViewById(R.id.radiogroup);
         Milkquantity=findViewById(R.id.milkquantitiy);
         Milkprice=findViewById(R.id.milkprice);
+        cowmilk=findViewById(R.id.cowmilk);
+        goatmilk=findViewById(R.id.goatmilk);
+        baffalomilk=findViewById(R.id.baffalomilk);
         db=dbHelper.getReadableDatabase();
         String[] columns = {DatabaseContract.MilkMan._ID};
         Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan.COL_EMAIL + "=?", new String[]{str}
@@ -41,6 +58,55 @@ public class AddMilkInfo extends AppCompatActivity {
         else{
             vall="0";
         }
+        Intent intent = getIntent();
+        String languages = intent.getExtras().getString("language");
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(AddMilkInfo.this, "en");
+            resources = context.getResources();
+            cat.setText(resources.getString(R.string.cat));
+            Milkprice.setText(resources.getString(R.string.price));
+            Milkquantity.setText(resources.getString(R.string.quantity));
+            heading.setText(resources.getString(R.string.heading1));
+
+            cowmilk.setText(resources.getString(R.string.cowmilk));
+            goatmilk.setText(resources.getString(R.string.goatmilk));
+            baffalomilk.setText(resources.getString(R.string.baffalomillk));
+            savedetails.setText(resources.getString(R.string.savedetails));
+
+
+
+
+
+
+            str1="ENGLISH";
+
+
+
+
+        }
+
+        if(languages.equals("اردو"))
+        {
+            context = LocalHelper.setLocale(AddMilkInfo.this, "an");
+            resources = context.getResources();
+            cat.setText(resources.getString(R.string.cat));
+            Milkprice.setText(resources.getString(R.string.price));
+            Milkquantity.setText(resources.getString(R.string.quantity));
+            heading.setText(resources.getString(R.string.heading1));
+
+            cowmilk.setText(resources.getString(R.string.cowmilk));
+            goatmilk.setText(resources.getString(R.string.goatmilk));
+            baffalomilk.setText(resources.getString(R.string.baffalomillk));
+            savedetails.setText(resources.getString(R.string.savedetails));
+
+
+            str1="اردو";
+
+
+        }
+
     }
 
 

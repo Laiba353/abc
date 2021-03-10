@@ -80,8 +80,9 @@ public class LogInPage extends AppCompatActivity {
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LogInPage.this,CreateMAccount.class));
-                finish();
+                Intent intent1=new Intent(LogInPage.this,CreateMAccount.class);
+                intent1.putExtra("language",str);
+                startActivity(intent1);
             }
         });
 
