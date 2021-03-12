@@ -58,54 +58,7 @@ public class AddMilkInfo extends AppCompatActivity {
         else{
             vall="0";
         }
-        Intent intent = getIntent();
-        String languages = intent.getExtras().getString("language");
-        if(languages.equals("ENGLISH"))
-        {
 
-            context = LocalHelper.setLocale(AddMilkInfo.this, "en");
-            resources = context.getResources();
-            cat.setText(resources.getString(R.string.cat));
-            Milkprice.setText(resources.getString(R.string.price));
-            Milkquantity.setText(resources.getString(R.string.quantity));
-            heading.setText(resources.getString(R.string.heading1));
-
-            cowmilk.setText(resources.getString(R.string.cowmilk));
-            goatmilk.setText(resources.getString(R.string.goatmilk));
-            baffalomilk.setText(resources.getString(R.string.baffalomillk));
-            savedetails.setText(resources.getString(R.string.savedetails));
-
-
-
-
-
-
-            str1="ENGLISH";
-
-
-
-
-        }
-
-        if(languages.equals("اردو"))
-        {
-            context = LocalHelper.setLocale(AddMilkInfo.this, "an");
-            resources = context.getResources();
-            cat.setText(resources.getString(R.string.cat));
-            Milkprice.setText(resources.getString(R.string.price));
-            Milkquantity.setText(resources.getString(R.string.quantity));
-            heading.setText(resources.getString(R.string.heading1));
-
-            cowmilk.setText(resources.getString(R.string.cowmilk));
-            goatmilk.setText(resources.getString(R.string.goatmilk));
-            baffalomilk.setText(resources.getString(R.string.baffalomillk));
-            savedetails.setText(resources.getString(R.string.savedetails));
-
-
-            str1="اردو";
-
-
-        }
 
     }
 
