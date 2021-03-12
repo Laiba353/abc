@@ -97,6 +97,11 @@ public class    SignIn extends AppCompatActivity {
                     tt.setText(str3);
                     tt.setVisibility(View.VISIBLE);
                     db.close();
+
+                    Intent intent1=new Intent(SignIn.this,AddMilkInfo.class);
+                    intent1.putExtra("language",str);
+                    startActivity(intent1);
+
                     Intent intent = new Intent(SignIn.this,MilkManList.class);
                     intent.putExtra("val", str3);
                     startActivity(intent);
@@ -117,5 +122,9 @@ public class    SignIn extends AppCompatActivity {
 
         Intent intent=new Intent(this, CreateAccount.class);
         startActivity(intent);
+
+        Intent intent1=new Intent(SignIn.this,AddMilkInfo.class);
+        intent1.putExtra("language",str);
+        startActivity(intent1);
     }
 }

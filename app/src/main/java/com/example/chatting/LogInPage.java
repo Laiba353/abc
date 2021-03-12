@@ -109,6 +109,12 @@ public class LogInPage extends AppCompatActivity {
                     intent.putExtra("val1",val);
                     startActivity(intent);
 
+                    Intent intent1=new Intent(LogInPage.this,AddMilkInfo.class);
+                    intent1.putExtra("language",str);
+                    startActivity(intent1);
+
+
+
                 }
                 else {
                     Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
