@@ -136,7 +136,10 @@ public class CreateMAccount extends AppCompatActivity {
             db.close();
             Intent intent = new Intent(this, AddMilkInfo.class);
             intent.putExtra("val1", Email);
+            intent.putExtra("language",str);
             startActivity(intent);
+
+
 
         }
 

@@ -38,6 +38,7 @@ public class AddMilkInfo extends AppCompatActivity {
 
         Intent inten=getIntent();
        str= inten.getStringExtra("val1");
+        String languages = inten.getExtras().getString("language");
        dbHelper=new DatabaseHelper(this);
        heading=findViewById(R.id.heading);
        savedetails=findViewById(R.id.savedetails);
@@ -60,9 +61,6 @@ public class AddMilkInfo extends AppCompatActivity {
             vall="0";
         }
 
-        Intent intent = getIntent();
-        String languages = intent.getExtras().getString("language");
-        Toast.makeText(this, languages, Toast.LENGTH_SHORT).show();
         if(languages.equals("ENGLISH"))
         {
 
@@ -87,7 +85,6 @@ public class AddMilkInfo extends AppCompatActivity {
             Milkprice.setText(resources.getString(R.string.price));
             Milkquantity.setText(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
-
             cowmilk.setText(resources.getString(R.string.cowmilk));
             goatmilk.setText(resources.getString(R.string.goatmilk));
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
