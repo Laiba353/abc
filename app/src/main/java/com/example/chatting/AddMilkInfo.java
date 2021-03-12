@@ -35,6 +35,31 @@ public class AddMilkInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_milk_info);
+
+        Intent inten=getIntent();
+       str= inten.getStringExtra("val1");
+       dbHelper=new DatabaseHelper(this);
+       heading=findViewById(R.id.heading);
+       savedetails=findViewById(R.id.savedetails);
+       cat=findViewById(R.id.cat);
+        RadioGroup=findViewById(R.id.radiogroup);
+        Milkquantity=findViewById(R.id.milkquantitiy);
+        Milkprice=findViewById(R.id.milkprice);
+        cowmilk=findViewById(R.id.cowmilk);
+        goatmilk=findViewById(R.id.goatmilk);
+        baffalomilk=findViewById(R.id.baffalomilk);
+        db=dbHelper.getReadableDatabase();
+        String[] columns = {DatabaseContract.MilkMan._ID};
+        Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan.COL_EMAIL + "=?", new String[]{str}
+                , null, null, null, null);
+        if (c.getCount() > 0) {
+            c.moveToFirst();
+            vall=String.valueOf(c.getLong(0));
+        }
+        else{
+            vall="0";
+        }
+
         Intent intent = getIntent();
         String languages = intent.getExtras().getString("language");
         Toast.makeText(this, languages, Toast.LENGTH_SHORT).show();
@@ -72,29 +97,6 @@ public class AddMilkInfo extends AppCompatActivity {
             str1="اردو";
 
 
-        }
-        Intent inten=getIntent();
-       str= inten.getStringExtra("val1");
-       dbHelper=new DatabaseHelper(this);
-       heading=findViewById(R.id.heading);
-       savedetails=findViewById(R.id.savedetails);
-       cat=findViewById(R.id.cat);
-        RadioGroup=findViewById(R.id.radiogroup);
-        Milkquantity=findViewById(R.id.milkquantitiy);
-        Milkprice=findViewById(R.id.milkprice);
-        cowmilk=findViewById(R.id.cowmilk);
-        goatmilk=findViewById(R.id.goatmilk);
-        baffalomilk=findViewById(R.id.baffalomilk);
-        db=dbHelper.getReadableDatabase();
-        String[] columns = {DatabaseContract.MilkMan._ID};
-        Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan.COL_EMAIL + "=?", new String[]{str}
-                , null, null, null, null);
-        if (c.getCount() > 0) {
-            c.moveToFirst();
-            vall=String.valueOf(c.getLong(0));
-        }
-        else{
-            vall="0";
         }
 
 
