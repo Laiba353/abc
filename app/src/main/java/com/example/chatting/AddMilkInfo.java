@@ -21,8 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddMilkInfo extends AppCompatActivity {
     android.widget.RadioGroup RadioGroup;
-    EditText Milkquantity, Milkprice,heading;
-    TextView cat;
+    EditText Milkquantity, Milkprice;
+    TextView cat, heading;
     String str,vall,str1;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
