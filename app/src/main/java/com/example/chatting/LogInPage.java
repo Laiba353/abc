@@ -107,11 +107,12 @@ public class LogInPage extends AppCompatActivity {
                     Toast.makeText(this, "values "+val, Toast.LENGTH_SHORT).show();
                    Intent intent=new Intent(LogInPage.this, AddMilkInfo.class);
                     intent.putExtra("val1",val);
+                    intent.putExtra("language",str);
                     startActivity(intent);
 
-                    Intent intent1=new Intent(LogInPage.this,AddMilkInfo.class);
-                    intent1.putExtra("language",str);
-                    startActivity(intent1);
+
+
+
 
 
 
