@@ -14,13 +14,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddMilkInfo extends AppCompatActivity {
     android.widget.RadioGroup RadioGroup;
-    EditText Milkquantity, Milkprice,heading,cat;
+    EditText Milkquantity, Milkprice,heading;
+    TextView cat;
     String str,vall,str1;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
