@@ -30,8 +30,6 @@
         android:textSize="17dp"
         android:gravity="center"
         android:id="@+id/milkquantitiy"
-
-
         />
     <EditText
         android:layout_width="160dp"
