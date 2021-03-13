@@ -152,7 +152,7 @@ public class AddMilkInfo extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         SearchOrders = menu.findItem(R.id.SearchOrders);
         OtherMilkMans = menu.findItem(R.id.OtherMilkMans);
-        Reviews= menu.findItem(R.id.OtherMilkMans);
+        Reviews= menu.findItem(R.id.Reviews);
         if(languages.equals("ENGLISH"))
         {
 
