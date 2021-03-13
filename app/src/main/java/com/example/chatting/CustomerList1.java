@@ -44,6 +44,23 @@ public class CustomerList1 extends AppCompatActivity {
         first=inte.getStringExtra("var");
 
         tv=(TextView)findViewById(R.id.txt);
+
+        if(languages.equals("ENGLISH")) {
+
+            context = LocalHelper.setLocale(CustomerList1.this, "en");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.customers));
+            str="ENGLISH";
+        }
+
+        if(languages.equals("اردو")) {
+
+            context = LocalHelper.setLocale(CustomerList1.this, "an");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.customers));
+            str="اردو";
+        }
+
         String[] columns={DatabaseContract.OrderT._ID, DatabaseContract.OrderT.COL_PLACED_BY};
         Cursor c = db.query(DatabaseContract.OrderT.TABLE_NAME,columns, DatabaseContract.OrderT.COL_PLACED_TO + "=?", new String[] {first}
                 , null, null, null, null);

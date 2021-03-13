@@ -43,6 +43,8 @@
     <string name="Reviews"> Reviews</string>
     <string name="NoOrder"> You have No Customer At The Movement</string>
 
+    <string name="customers">  Here Are Your Customers</string>
+
 
 
 </resources>
