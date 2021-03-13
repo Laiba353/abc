@@ -71,37 +71,80 @@ public class MilkManList2 extends AppCompatActivity {
         if (c.getCount() > 0) {
 
             Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
+            if(languages.equals("ENGLISH")) {
 
-            while (c.moveToNext()) {
-                long id = c.getLong(0);
-                s1 = c.getString(1);
-                s2 = c.getString(2);
-                s4 = c.getString(3);
-                s3 = String.valueOf(id);
-                MilkMan mObj = new MilkMan(s1, "Category : " + s4 + ", Loc : " + s2, s3);
-                arrayList.add(mObj);
+                context = LocalHelper.setLocale(MilkManList2.this, "en");
+                resources = context.getResources();
+                while (c.moveToNext()) {
+                    long id = c.getLong(0);
+                    s1 = c.getString(1);
+                    s2 = c.getString(2);
+                    s4 = c.getString(3);
+                    s3 = String.valueOf(id);
+                    MilkMan mObj = new MilkMan(s1, "Category : " + s4 + ", Loc : " + s2, s3);
+                    arrayList.add(mObj);
+
+                }
+
+
+                lv = (ListView) findViewById(R.id.list1);
+                milk1 customList = new milk1(activity, arrayList);
+
+
+                lv.setAdapter(customList);
+
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        String ss = arrayList.get(position).getOrderNo();
+                        String ss2 = arrayList.get(position).getName();
+                        Intent intent = new Intent(MilkManList2.this, othersReviews.class);
+                        intent.putExtra("val", ss);
+                        intent.putExtra("val2", ss2);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+            if(languages.equals("اردو")) {
+
+                context = LocalHelper.setLocale(MilkManList2.this, "an");
+                resources = context.getResources();
+                while (c.moveToNext()) {
+                    long id = c.getLong(0);
+                    s1 = c.getString(1);
+                    s2 = c.getString(2);
+                    s4 = c.getString(3);
+                    s3 = String.valueOf(id);
+                    MilkMan mObj = new MilkMan(s1, "دودھ کی قسم : " + s4 + ", جگہ : " + s2, s3);
+                    arrayList.add(mObj);
+
+                }
+
+
+                lv = (ListView) findViewById(R.id.list1);
+                milk1 customList = new milk1(activity, arrayList);
+
+
+                lv.setAdapter(customList);
+
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        String ss = arrayList.get(position).getOrderNo();
+                        String ss2 = arrayList.get(position).getName();
+                        Intent intent = new Intent(MilkManList2.this, othersReviews.class);
+                        intent.putExtra("val", ss);
+                        intent.putExtra("val2", ss2);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
+                    }
+                });
+
 
             }
 
-
-            lv = (ListView) findViewById(R.id.list1);
-            milk1 customList = new milk1(activity, arrayList);
-
-
-            lv.setAdapter(customList);
-
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    String ss = arrayList.get(position).getOrderNo();
-                    String ss2 = arrayList.get(position).getName();
-                    Intent intent = new Intent(MilkManList2.this, othersReviews.class);
-                    intent.putExtra("val", ss);
-                    intent.putExtra("val2", ss2);
-                    startActivity(intent);
-                    Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
-                }
-            });
 
         } else {
 
