@@ -42,6 +42,7 @@ public class MilkManList2 extends AppCompatActivity {
         dbh = new DatabaseHelper(this);
         Intent inten = getIntent();
         str = inten.getStringExtra("val");
+        languages = inten.getExtras().getString("language");
         Toast.makeText(getApplicationContext(), "Record id" + str, Toast.LENGTH_LONG).show();
         db = dbh.getReadableDatabase();
         tv = (TextView) findViewById(R.id.txt);

@@ -76,8 +76,8 @@ public class AddMilkInfo extends AppCompatActivity {
             context = LocalHelper.setLocale(AddMilkInfo.this, "en");
             resources = context.getResources();
             cat.setText(resources.getString(R.string.cat));
-            Milkprice.setText(resources.getString(R.string.price));
-            Milkquantity.setText(resources.getString(R.string.quantity));
+            Milkprice.setHint(resources.getString(R.string.price));
+            Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             cowmilk.setText(resources.getString(R.string.cowmilk));
             goatmilk.setText(resources.getString(R.string.goatmilk));
@@ -94,8 +94,8 @@ public class AddMilkInfo extends AppCompatActivity {
             context = LocalHelper.setLocale(AddMilkInfo.this, "an");
             resources = context.getResources();
             cat.setText(resources.getString(R.string.cat));
-            Milkprice.setText(resources.getString(R.string.price));
-            Milkquantity.setText(resources.getString(R.string.quantity));
+            Milkprice.setHint(resources.getString(R.string.price));
+            Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             cowmilk.setText(resources.getString(R.string.cowmilk));
             goatmilk.setText(resources.getString(R.string.goatmilk));
