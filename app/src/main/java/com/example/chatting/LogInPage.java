@@ -47,9 +47,9 @@ public class LogInPage extends AppCompatActivity {
             context = LocalHelper.setLocale(LogInPage.this, "en");
             resources = context.getResources();
             txt1.setText(resources.getString(R.string.login));
-            login.setHint(resources.getString(R.string.login));
+            login.setText(resources.getString(R.string.login));
             name.setHint(resources.getString(R.string.name));
-            password.setText(resources.getString(R.string.password));
+            password.setHint(resources.getString(R.string.password));
             txt2.setText(resources.getString(R.string.question1));
             createaccount.setText(resources.getString(R.string.account));
             str="ENGLISH";
@@ -64,8 +64,8 @@ public class LogInPage extends AppCompatActivity {
             context = LocalHelper.setLocale(LogInPage.this, "an");
             resources = context.getResources();
             txt1.setText(resources.getString(R.string.login));
-            name.setText(resources.getString(R.string.name));
-            login.setHint(resources.getString(R.string.login));
+            login.setText(resources.getString(R.string.login));
+            name.setHint(resources.getString(R.string.name));
             password.setHint(resources.getString(R.string.password));
             txt2.setText(resources.getString(R.string.question1));
             createaccount.setText(resources.getString(R.string.account));
