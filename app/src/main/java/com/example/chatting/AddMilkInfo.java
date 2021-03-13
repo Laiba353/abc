@@ -1,6 +1,7 @@
 package com.example.chatting;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -30,6 +31,7 @@ public class AddMilkInfo extends AppCompatActivity {
     Resources resources;
     RadioButton goatmilk, cowmilk, baffalomilk;
     Button savedetails;
+    MenuItem SearchOrders, OtherMilkMans,Reviews;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class AddMilkInfo extends AppCompatActivity {
         cowmilk=findViewById(R.id.cowmilk);
         goatmilk=findViewById(R.id.goatmilk);
         baffalomilk=findViewById(R.id.baffalomilk);
+
+
+
+
         db=dbHelper.getReadableDatabase();
         String[] columns = {DatabaseContract.MilkMan._ID};
         Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan.COL_EMAIL + "=?", new String[]{str}
@@ -74,6 +80,11 @@ public class AddMilkInfo extends AppCompatActivity {
             goatmilk.setText(resources.getString(R.string.goatmilk));
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
+
+            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
+            Reviews.setTitle(resources.getString(R.string.Reviews));
+
             str1="ENGLISH";
         }
 
@@ -90,6 +101,10 @@ public class AddMilkInfo extends AppCompatActivity {
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
 
+            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
+            Reviews.setTitle(resources.getString(R.string.Reviews));
+
 
             str1="اردو";
 
@@ -98,6 +113,8 @@ public class AddMilkInfo extends AppCompatActivity {
 
 
     }
+
+
 
 
     public void PostDetails (View view) {
@@ -130,15 +147,21 @@ public class AddMilkInfo extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main, menu);
+        SearchOrders = menu.findItem(R.id.SearchOrders);
+        OtherMilkMans = menu.findItem(R.id.OtherMilkMans);
+        Reviews= menu.findItem(R.id.OtherMilkMans);
         return true;
 
 
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.SearchOrders:
+
+
                 Intent intent=new Intent(this,CustomerList1.class);
                 intent.putExtra("var",vall);
                 startActivity(intent);
