@@ -38,13 +38,9 @@
     <string name="goatmilk"> Goat Milk</string>
     <string name="baffalomillk"> Baffalo Milk</string>
 
-
-
-
-
-
-
-
+    <string name="SearchOrders"> Search Orders</string>
+    <string name="OtherMilkMans"> Other Milk Mans</string>
+    <string name="Reviews"> Reviews</string>
 
 
 </resources>
