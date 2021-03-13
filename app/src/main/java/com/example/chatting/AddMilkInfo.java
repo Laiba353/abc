@@ -80,9 +80,9 @@ public class AddMilkInfo extends AppCompatActivity {
             Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             cowmilk.setText(resources.getString(R.string.cowmilk));
-            goatmilk.setText(resources.getString(R.string.goatmilk));
+            /*goatmilk.setText(resources.getString(R.string.goatmilk));
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
-            savedetails.setText(resources.getString(R.string.savedetails));
+            savedetails.setText(resources.getString(R.string.savedetails));*/
 
 
 
@@ -98,9 +98,9 @@ public class AddMilkInfo extends AppCompatActivity {
             Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             cowmilk.setText(resources.getString(R.string.cowmilk));
-            goatmilk.setText(resources.getString(R.string.goatmilk));
+          /*  goatmilk.setText(resources.getString(R.string.goatmilk));
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
-            savedetails.setText(resources.getString(R.string.savedetails));
+            savedetails.setText(resources.getString(R.string.savedetails));*/
 
 
 
