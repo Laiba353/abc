@@ -1,7 +1,9 @@
 package com.example.chatting;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -25,10 +27,16 @@ public class CustomerList1 extends AppCompatActivity {
     String str1,str2,str3,str4,str5;
     String num,first;
     TextView tv;
+    Context context;
+    Resources resources;
+    String str;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list1);
+        Intent inten=getIntent();
+        languages = inten.getExtras().getString("language");
         activity = this;
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
@@ -70,9 +78,20 @@ public class CustomerList1 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"You Selected "+customer.get(position).getName()+ " as Country", Toast.LENGTH_LONG).show();        }
             });
         }else {
+            if(languages.equals("ENGLISH")) {
 
-            tv.setText("You have No Customer At The Movement");
-            Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
+                context = LocalHelper.setLocale(CustomerList1.this, "en");
+                resources = context.getResources();
+                tv.setText(resources.getString(R.string.NoOrder));
+            }
+
+            if(languages.equals("اردو")) {
+
+                context = LocalHelper.setLocale(CustomerList1.this, "an");
+                resources = context.getResources();
+                tv.setText(resources.getString(R.string.NoOrder));
+            }
+
         }
     }
 }

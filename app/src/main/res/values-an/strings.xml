@@ -42,4 +42,6 @@
     <string name="SearchOrders"> آرڈر دیکھیں</string>
     <string name="OtherMilkMans"> دوسرے دودھ بیچنے والے دیکھیں</string>
     <string name="Reviews"> لوگوں کے جائزے</string>
+
+    <string name="NoOrder"> ابھی آپ کا کوئی گراہک نہیں ہے</string>
 </resources>

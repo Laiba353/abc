@@ -84,9 +84,7 @@ public class AddMilkInfo extends AppCompatActivity {
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
 
-          /*  SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
-            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
-            Reviews.setTitle(resources.getString(R.string.Reviews));*/
+
 
             str1="ENGLISH";
         }
@@ -104,10 +102,8 @@ public class AddMilkInfo extends AppCompatActivity {
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
 
-           /* SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
-            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
-            Reviews.setTitle(resources.getString(R.string.Reviews));
-*/
+
+
 
             str1="اردو";
 
@@ -188,17 +184,20 @@ public class AddMilkInfo extends AppCompatActivity {
 
                 Intent intent=new Intent(this,CustomerList1.class);
                 intent.putExtra("var",vall);
+                intent.putExtra("language",str1);
                 startActivity(intent);
                 return true;
             case R.id.OtherMilkMans:
                 Intent inten=new Intent(this,MilkManList2.class);
                 inten.putExtra("val",vall);
+                inten.putExtra("language",str1);
                 startActivity(inten);
 
                 return true;
             case R.id.Reviews:
                 Intent inte=new Intent(this,showReview.class);
                 inte.putExtra("val",vall);
+                inte.putExtra("language",str1);
                 startActivity(inte);
 
                 return true;
