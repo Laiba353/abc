@@ -39,7 +39,7 @@
     <string name="goatmilk"> بکری کا دودھ</string>
     <string name="baffalomillk"> بھینس کا دودھ</string>
 
-    <string name="SearchOrders"> Search Orders</string>
-    <string name="OtherMilkMans"> Other Milk Mans</string>
-    <string name="Reviews"> Reviews</string>
+    <string name="SearchOrders"> آرڈر دیکھیں</string>
+    <string name="OtherMilkMans"> دوسرے دودھ بیچنے والے دیکھیں</string>
+    <string name="Reviews"> لوگوں کے جائزے</string>
 </resources>
