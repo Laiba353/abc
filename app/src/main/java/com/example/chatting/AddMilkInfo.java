@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,15 +33,17 @@ public class AddMilkInfo extends AppCompatActivity {
     RadioButton goatmilk, cowmilk, baffalomilk;
     Button savedetails;
     MenuItem SearchOrders, OtherMilkMans,Reviews;
+    String languages;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_milk_info);
 
+
         Intent inten=getIntent();
        str= inten.getStringExtra("val1");
-        String languages = inten.getExtras().getString("language");
+       languages = inten.getExtras().getString("language");
        dbHelper=new DatabaseHelper(this);
        heading=findViewById(R.id.heading);
        savedetails=findViewById(R.id.savedetails);
@@ -81,9 +84,9 @@ public class AddMilkInfo extends AppCompatActivity {
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
 
-            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+          /*  SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
             OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
-            Reviews.setTitle(resources.getString(R.string.Reviews));
+            Reviews.setTitle(resources.getString(R.string.Reviews));*/
 
             str1="ENGLISH";
         }
@@ -101,10 +104,10 @@ public class AddMilkInfo extends AppCompatActivity {
             baffalomilk.setText(resources.getString(R.string.baffalomillk));
             savedetails.setText(resources.getString(R.string.savedetails));
 
-            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+           /* SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
             OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
             Reviews.setTitle(resources.getString(R.string.Reviews));
-
+*/
 
             str1="اردو";
 
@@ -150,6 +153,27 @@ public class AddMilkInfo extends AppCompatActivity {
         SearchOrders = menu.findItem(R.id.SearchOrders);
         OtherMilkMans = menu.findItem(R.id.OtherMilkMans);
         Reviews= menu.findItem(R.id.OtherMilkMans);
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(AddMilkInfo.this, "en");
+            resources = context.getResources();
+            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
+            Reviews.setTitle(resources.getString(R.string.Reviews));
+        }
+
+        if(languages.equals("اردو"))
+        {
+
+            context = LocalHelper.setLocale(AddMilkInfo.this, "an");
+            resources = context.getResources();
+            SearchOrders.setTitle(resources.getString(R.string.SearchOrders));
+            OtherMilkMans.setTitle(resources.getString(R.string.OtherMilkMans));
+            Reviews.setTitle(resources.getString(R.string.Reviews));
+        }
+
+
         return true;
 
 
