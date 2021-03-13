@@ -49,7 +49,7 @@ public class MilkManList2 extends AppCompatActivity {
 
             context = LocalHelper.setLocale(MilkManList2.this, "en");
             resources = context.getResources();
-            tv.setText(resources.getString(R.string.milkmans));
+            tv.setText(resources.getString(R.string.milkmans1));
             str="ENGLISH";
         }
 
@@ -57,7 +57,7 @@ public class MilkManList2 extends AppCompatActivity {
 
             context = LocalHelper.setLocale(MilkManList2.this, "an");
             resources = context.getResources();
-            tv.setText(resources.getString(R.string.milkmans));
+            tv.setText(resources.getString(R.string.milkmans1));
             str="اردو";
         }
 
@@ -109,7 +109,7 @@ public class MilkManList2 extends AppCompatActivity {
 
                 context = LocalHelper.setLocale(MilkManList2.this, "en");
                 resources = context.getResources();
-                tv.setText(resources.getString(R.string.nomilkmans));
+                tv.setText(resources.getString(R.string.nomilkmans1));
                 str="ENGLISH";
             }
 
@@ -117,7 +117,7 @@ public class MilkManList2 extends AppCompatActivity {
 
                 context = LocalHelper.setLocale(MilkManList2.this, "an");
                 resources = context.getResources();
-                tv.setText(resources.getString(R.string.nomilkmans));
+                tv.setText(resources.getString(R.string.nomilkmans1));
                 str="اردو";
             }
         }

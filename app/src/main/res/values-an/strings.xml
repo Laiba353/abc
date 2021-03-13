@@ -46,7 +46,7 @@
     <string name="NoOrder"> ابھی آپ کا کوئی گاہک نہیں ہے</string>
     <string name="customers"> آپ کے گاہک</string>
 
-    <string name="milkmans">  دودھ بیچنے والوں کی فہرست </string>
-    <string name="nomilkmans">   اس ایپ پر ابھی کوئی دودھ فروش نہیں ہے </string>
+    <string name="milkmans1">  دودھ بیچنے والوں کی فہرست </string>
+    <string name="nomilkmans1">   اس ایپ پر ابھی کوئی دودھ فروش نہیں ہے </string>
 
 </resources>
