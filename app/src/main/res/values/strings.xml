@@ -41,9 +41,13 @@
     <string name="SearchOrders"> Search Orders</string>
     <string name="OtherMilkMans"> Other Milk Mans</string>
     <string name="Reviews"> Reviews</string>
-    <string name="NoOrder"> You have No Customer At The Movement</string>
 
+    <string name="NoOrder"> You have No Customer At The Movement</string>
     <string name="customers">  Here Are Your Customers</string>
+
+    <string name="milkmans">   Lists Of Milk Mans </string>
+    <string name="nomilkmans">   There is no Milk Man At The Movement </string>
+
 
 
 

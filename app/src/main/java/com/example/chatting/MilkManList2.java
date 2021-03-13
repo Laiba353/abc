@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -27,6 +29,11 @@ public class MilkManList2 extends AppCompatActivity {
     String str,s1,s2,s3, s4;
     private ProgressDialog progressDialog;
     TextView tv;
+
+    Context context;
+    Resources resources;
+    String str1;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +45,22 @@ public class MilkManList2 extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Record id" + str, Toast.LENGTH_LONG).show();
         db = dbh.getReadableDatabase();
         tv = (TextView) findViewById(R.id.txt);
+        if(languages.equals("ENGLISH")) {
+
+            context = LocalHelper.setLocale(MilkManList2.this, "en");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.milkmans));
+            str="ENGLISH";
+        }
+
+        if(languages.equals("اردو")) {
+
+            context = LocalHelper.setLocale(MilkManList2.this, "an");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.milkmans));
+            str="اردو";
+        }
+
 
 
         //move activity
@@ -81,8 +104,22 @@ public class MilkManList2 extends AppCompatActivity {
 
         } else {
 
-            tv.setText("There is no Milk Man At The Movement");
-            Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
+
+            if(languages.equals("ENGLISH")) {
+
+                context = LocalHelper.setLocale(MilkManList2.this, "en");
+                resources = context.getResources();
+                tv.setText(resources.getString(R.string.nomilkmans));
+                str="ENGLISH";
+            }
+
+            if(languages.equals("اردو")) {
+
+                context = LocalHelper.setLocale(MilkManList2.this, "an");
+                resources = context.getResources();
+                tv.setText(resources.getString(R.string.nomilkmans));
+                str="اردو";
+            }
         }
 
 

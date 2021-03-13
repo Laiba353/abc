@@ -43,7 +43,10 @@
     <string name="OtherMilkMans"> دوسرے دودھ بیچنے والے دیکھیں</string>
     <string name="Reviews"> لوگوں کے جائزے</string>
 
-    <string name="NoOrder"> ابھی آپ کا کوئی گراہک نہیں ہے</string>
-
+    <string name="NoOrder"> ابھی آپ کا کوئی گاہک نہیں ہے</string>
     <string name="customers"> آپ کے گاہک</string>
+
+    <string name="milkmans">  دودھ بیچنے والوں کی فہرست </string>
+    <string name="nomilkmans">   اس ایپ پر ابھی کوئی دودھ فروش نہیں ہے </string>
+
 </resources>
